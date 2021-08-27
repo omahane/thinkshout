@@ -1,6 +1,69 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
 /* Global Variables */
 /* Breakpoints */
 /* Colors */
+/* Mixins */
+:root {
+  font-family: "Hind Siliguri", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
 .middle-bit {
   max-width: 1400px;
   margin: 0 auto;
@@ -12,10 +75,6 @@
 
 .secondary {
   color: #f07c00;
-}
-
-* {
-  font-family: "Hind Siliguri", sans-serif;
 }
 
 .container {
@@ -65,57 +124,131 @@ header nav ul li:last-of-type {
 h1 {
   max-width: 24ch;
   font-size: 4rem;
-  line-height: 3.5rem;
-}
-
-.text-wrapper, header, footer {
-  margin: 0 auto;
-  padding: 0 2%;
-  width: 100%;
-}
-@media screen and (min-width: 768px) {
-  .text-wrapper, header, footer {
-    padding: 0 4%;
-  }
-}
-@media screen and (min-width: 1024px) {
-  .text-wrapper, header, footer {
-    padding: 0 5%;
-  }
-}
-@media screen and (min-width: 1280px) {
-  .text-wrapper, header, footer {
-    padding: 0 6%;
-  }
-}
-@media screen and (min-width: 1440px) {
-  .text-wrapper, header, footer {
-    padding: 0 7%;
-  }
-}
-@media screen and (min-width: 1680px) {
-  .text-wrapper, header, footer {
-    padding: 0 8%;
-  }
-}
-@media screen and (min-width: 1900px) {
-  .text-wrapper, header, footer {
-    padding: 0 9%;
-  }
+  line-height: 4rem;
+  font-weight: 900;
 }
 
 .hero {
   height: 660px;
-  transition: background-color 0.3s cubic-bezier(1, 0, 0, 1) 0s;
   background-repeat: no-repeat;
   background-size: cover;
+  position: relative;
 }
-.hero:hover {
-  background-color: rgba(0, 0, 0, 0.4);
+.hero .text-wrapper {
+  transition: background-color 0.3s ease-in 0s;
+  height: 660px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+}
+.hero .text-wrapper:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.hero .text-wrapper:hover p {
+  transition: background-image 0.3s ease-in 0s;
+}
+.hero .text-wrapper:hover p::after {
+  content: "";
+  display: inline-block;
+  background-image: url("assets/si-sprite.svg");
+  background-color: orange;
+  background-repeat: no-repeat;
+  width: 1rem;
+  height: 1rem;
+  overflow: visible;
+}
+.hero .text-wrapper h2 {
+  font-weight: 900;
+  font-size: 3.5rem;
+  margin: 0 0 0.5rem 0;
+}
+.hero .text-wrapper p {
+  margin: 0;
+  font-size: 1.5rem;
 }
 
 #people {
-  background-image: url("/assets/rosa_m.jpeg");
+  background-image: url("assets/rosa_m.jpeg");
+  box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.5);
+}
+
+#planet {
+  background-image: url("assets/carbon12-hero.jpeg");
+  box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.5);
+}
+
+#education {
+  background-image: url("assets/tt-hero-20.jpeg");
+  box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.5);
+}
+
+#services h2 {
+  font-weight: 900;
+  font-size: 1.75em;
+  margin-bottom: 1.5rem;
+}
+
+.card-group {
+  display: flex;
+  justify-content: space-between;
+}
+.card-group .card {
+  display: flex;
+  max-width: 400px;
+}
+.card-group .card h3 {
+  font-weight: 900;
+  color: #f07c00;
+  font-size: 1.25rem;
+  min-width: 12ch;
+  margin-right: 3ch;
+}
+.card-group .card p {
+  color: #636363;
+  line-height: 1.5rem;
+}
+
+#call-to-action {
+  border-top: 8px rgba(0, 0, 0, 0.1) solid;
+  padding-top: 1em;
+  padding-bottom: 4em;
+}
+#call-to-action h2 {
+  font-weight: 600;
+  font-size: 2em;
+  color: #636363;
+}
+#call-to-action h2 a {
+  font-weight: 900;
+  color: #f07c00;
+}
+
+footer {
+  background-image: url("assets/falcon-view.jpeg");
+  box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.7);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+footer .section-wrapper {
+  display: grid;
+  grid-template: "form-wrapper    b-corp" "footer-nav      footer-nav" "bottom          bottom"/1fr 60px;
+}
+footer .section-wrapper #form-wrapper {
+  grid-area: form-wrapper;
+}
+footer .section-wrapper #b-corp-wrapper {
+  grid-area: b-corp;
+}
+footer .section-wrapper ul {
+  grid-area: footer-nav;
+}
+footer .section-wrapper #footer-bottom-wrapper {
+  grid-area: bottom;
+}
+footer .section-wrapper p:last-of-type {
+  grid-area: p2;
 }
 
 /*# sourceMappingURL=styles.css.map */
