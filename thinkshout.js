@@ -1,28 +1,24 @@
+var messageArea = document.querySelector("#form-wrapper p");
+var hamburger = document.querySelector(".hamburger");
 
-  // Look for .hamburger
-  var hamburger = document.querySelector(".hamburger");
-  // On click
   hamburger.addEventListener("click", function() {
-    // Toggle class "is-active"
     hamburger.classList.toggle("is-active");
-    // Do something else, like open/close menu
+    document.querySelector("#mobile-menu").classList.toggle("hidden");
   });
+
 if (!localStorage.getItem("subscribed") == true){
     var subscribe = document.querySelector("#subscribe");
    
     subscribe.addEventListener("click", function(event){
         event.preventDefault();
         var emailAddr = document.querySelector("#email").value;
-        console.log("about to ask if it's true")
         if (validateEmail(emailAddr)) {
             localStorage.setItem("subscribed",true);
-            console.log("it's true");
-            var messageArea = document.querySelector("#form-wrapper p");
+            
             messageArea.innerHTML = "Thanks for signing up.";
             document.querySelector("#form-wrapper form").classList.add("hidden");
         } else {
-            // add a message to the dom
-            // put focus on form field
+            messageArea.innerHTML = "Please enter a valid address.";
         } 
     });
 } else {
