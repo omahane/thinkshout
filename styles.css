@@ -52,6 +52,196 @@ table {
   border-spacing: 0;
 }
 
+/* ----------------------------------------------------------------------------------------------------
+
+SCSS Form Reset Helpers - Forked from: https://gist.github.com/anthonyshort/552543
+
+Intended usage:
+- MIXINS: for very specific use cases, when you dont want to reset absolutly all the forms, very verbose output.
+- PLACEHOLDER SELECTORS: use as extending classes. Less verbose, more generic overrides.
+
+A couple of things to watch out for:
+
+- IE8: If a text input doesn't have padding on all sides or none the text won't be centered.
+- The default border sizes on text inputs in all UAs seem to be slightly different. You're better off using custom borders.
+- You NEED to set the font-size and family on all form elements
+- Search inputs need to have their appearance reset and the box-sizing set to content-box to match other UAs
+- You can style the upload button in webkit using ::-webkit-file-upload-button
+- ::-webkit-file-upload-button selectors can't be used in the same selector as normal ones. FF and IE freak out.
+- IE: You don't need to fake inline-block with labels and form controls in IE. They function as inline-block.
+- By turning off ::-webkit-search-decoration, it removes the extra whitespace on the left on search inputs
+
+----------------------------------------------------------------------------------------------------*/
+footer form button, footer form input {
+  display: inline-block;
+  margin: 0;
+  border: 0;
+  padding: 0;
+  width: auto;
+  vertical-align: middle;
+  white-space: normal;
+  line-height: inherit;
+  background: none;
+  /* Browsers have different default form fonts */
+  color: inherit;
+  font-size: inherit;
+  font-family: inherit;
+}
+
+footer form input[type=reset], footer form input[type=button], footer form input[type=submit], footer form input[type=checkbox], footer form input[type=radio] {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+footer form input {
+  /* Make webkit render the search input like a normal text field */
+  /* Turn off the recent search for webkit. It adds about 15px padding on the left */
+  /* Fix IE7 display bug */
+  /* These elements are usually rendered a certain way by the browser */
+}
+footer form input:focus {
+  outline: 0;
+}
+footer form input[type=checkbox], footer form input[type=radio] {
+  width: 13px;
+  height: 13px;
+}
+footer form input[type=search] {
+  -webkit-appearance: textfield;
+  -webkit-box-sizing: content-box;
+}
+::-webkit-search-decoration {
+  display: none;
+}
+
+footer form input[type=reset], footer form input[type=button], footer form input[type=submit] {
+  overflow: visible;
+}
+footer form button {
+  background: none;
+  border: 0;
+  outline: none;
+  /* IE8 and FF freak out if this rule is within another selector */
+}
+footer form button::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+footer form button:hover, footer form button:active, footer form button:focus {
+  outline: 0;
+}
+::-webkit-file-upload-button {
+  padding: 0;
+  border: 0;
+  background: none;
+}
+
+/*!
+ * Hamburgers
+ * @description Tasty CSS-animated hamburgers
+ * @author Jonathan Suh @jonsuh
+ * @site https://jonsuh.com/hamburgers
+ * @link https://github.com/jonsuh/hamburgers
+ */
+.hamburger {
+  padding: 15px 15px;
+  display: inline-block;
+  cursor: pointer;
+  transition-property: opacity, filter;
+  transition-duration: 0.15s;
+  transition-timing-function: linear;
+  font: inherit;
+  color: inherit;
+  text-transform: none;
+  background-color: transparent;
+  border: 0;
+  margin: 0;
+  overflow: visible;
+}
+
+.hamburger:hover {
+  opacity: 0.7;
+}
+
+.hamburger.is-active:hover {
+  opacity: 0.7;
+}
+
+.hamburger.is-active .hamburger-inner,
+.hamburger.is-active .hamburger-inner::before,
+.hamburger.is-active .hamburger-inner::after {
+  background-color: #000;
+}
+
+.hamburger-box {
+  width: 40px;
+  height: 24px;
+  display: inline-block;
+  position: relative;
+}
+
+.hamburger-inner {
+  display: block;
+  top: 50%;
+  margin-top: -2px;
+}
+
+.hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
+  width: 40px;
+  height: 4px;
+  background-color: #000;
+  border-radius: 4px;
+  position: absolute;
+  transition-property: transform;
+  transition-duration: 0.15s;
+  transition-timing-function: ease;
+}
+
+.hamburger-inner::before, .hamburger-inner::after {
+  content: "";
+  display: block;
+}
+
+.hamburger-inner::before {
+  top: -10px;
+}
+
+.hamburger-inner::after {
+  bottom: -10px;
+}
+
+/*
+   * Slider
+   */
+.hamburger--slider .hamburger-inner {
+  top: 2px;
+}
+
+.hamburger--slider .hamburger-inner::before {
+  top: 10px;
+  transition-property: transform, opacity;
+  transition-timing-function: ease;
+  transition-duration: 0.15s;
+}
+
+.hamburger--slider .hamburger-inner::after {
+  top: 20px;
+}
+
+.hamburger--slider.is-active .hamburger-inner {
+  transform: translate3d(0, 10px, 0) rotate(45deg);
+}
+
+.hamburger--slider.is-active .hamburger-inner::before {
+  transform: rotate(-45deg) translate3d(-5.71429px, -6px, 0);
+  opacity: 0;
+}
+
+.hamburger--slider.is-active .hamburger-inner::after {
+  transform: translate3d(0, -20px, 0) rotate(-90deg);
+}
+
 /* Global Variables */
 /* Breakpoints */
 /* Colors */
@@ -62,6 +252,10 @@ table {
 
 a {
   text-decoration: none;
+}
+
+.hidden {
+  display: none;
 }
 
 .middle-bit {
@@ -82,42 +276,39 @@ a {
   flex-direction: column;
 }
 
-header nav {
+nav {
   display: flex;
 }
-@media screen and (min-width: 1024px) {
-  header nav {
+@media screen and (min-width: 660px) {
+  nav {
     justify-content: space-between;
     align-items: center;
   }
-  header nav #logo-wrapper {
+  nav #logo-wrapper {
     width: 200px;
     margin-right: 400px;
   }
 }
-header nav img {
+nav img {
   width: 180px;
 }
-header nav ul {
+nav ul {
   list-style: none;
   display: flex;
   flex-direction: column;
 }
-header nav ul.hidden {
-  display: none;
-}
-@media screen and (min-width: 1024px) {
-  header nav ul {
+@media screen and (min-width: 660px) {
+  nav ul {
     display: flex;
     flex-direction: row;
   }
 }
-@media screen and (min-width: 1024px) {
-  header nav ul li {
+@media screen and (min-width: 660px) {
+  nav ul li {
     margin-left: 3em;
   }
 }
-header nav ul li:last-of-type {
+nav ul li:last-of-type {
   font-weight: 600;
 }
 
@@ -230,25 +421,72 @@ footer {
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
+  color: white;
 }
-footer .section-wrapper {
-  display: grid;
-  grid-template: "form-wrapper    b-corp" "footer-nav      footer-nav" "bottom          bottom"/1fr 60px;
+@media screen and (min-width: 660px) {
+  footer {
+    height: 550px;
+  }
+  footer .section-wrapper {
+    padding-top: 80px;
+    display: grid;
+    grid-template: "form-wrapper    b-corp" 160px "footer-nav      footer-nav" 2em "foot          foot" 200px/1fr 60px;
+  }
+  footer .section-wrapper #form-wrapper {
+    grid-area: form-wrapper;
+  }
+  footer .section-wrapper #b-corp-wrapper {
+    grid-area: b-corp;
+  }
+  footer .section-wrapper nav {
+    grid-area: footer-nav;
+  }
+  footer .section-wrapper #footer-bottom-wrapper {
+    grid-area: foot;
+  }
+  footer .section-wrapper p:last-of-type {
+    grid-area: p2;
+  }
 }
-footer .section-wrapper #form-wrapper {
-  grid-area: form-wrapper;
+footer form {
+  display: flex;
+  font-size: 0.8rem;
 }
-footer .section-wrapper #b-corp-wrapper {
-  grid-area: b-corp;
+footer form input {
+  background-color: white;
+  height: 3rem;
+  width: 35ch;
+  padding: 0.1rem 1rem;
+  color: black;
+  font-weight: 100;
 }
-footer .section-wrapper ul {
-  grid-area: footer-nav;
+footer form button {
+  background-color: #f07c00;
+  color: black;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
 }
-footer .section-wrapper #footer-bottom-wrapper {
-  grid-area: bottom;
+footer a:hover {
+  text-decoration: underline;
 }
-footer .section-wrapper p:last-of-type {
-  grid-area: p2;
+footer #footer-bottom-wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 180px;
+  margin-bottom: 60px;
+}
+footer #footer-bottom-wrapper p {
+  font-size: 0.8rem;
+  max-width: 80ch;
+}
+footer #footer-bottom-wrapper p a {
+  color: white;
+  font-weight: 600;
+}
+footer #social-wrapper {
+  font-size: 1.8rem;
 }
 
 /*# sourceMappingURL=styles.css.map */
