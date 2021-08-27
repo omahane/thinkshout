@@ -1,0 +1,133 @@
+/* Global Variables */
+
+/* Breakpoints */
+$desk: 1900px;
+$lap-xl: 1680px;
+$lap-l: 1440px;
+$lap-m: 1280px;
+$lap-s: 1024px;
+$tab: 768px;
+$phone: 600px;
+
+/* Colors */
+$primary: #636363;
+$secondary: #f07c00;
+
+
+.middle-bit {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+.primary {
+    color: $primary;
+}
+.secondary {
+    color: $secondary;
+}
+
+
+* {
+    font-family: 'Hind Siliguri', sans-serif;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    
+}
+header {
+    nav {
+        display: flex;
+        
+        @media screen and (min-width: $lap-s) {
+            justify-content: space-between;
+            align-items: center;
+
+            #logo-wrapper {
+                width: 200px;
+                margin-right: 400px;
+            }
+        }
+
+        img {
+            width: 180px;
+        }
+
+        ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+
+            &.hidden {
+                display:none;
+            }
+
+            @media screen and (min-width: $lap-s) {
+                display: flex;
+                flex-direction: row;
+
+            }
+
+            li {
+                @media screen and (min-width: $lap-s) {
+                    margin-left: 3em;
+    
+                }
+
+            }
+
+            li:last-of-type {
+                font-weight: 600;
+
+            }
+           
+            
+        }
+        
+    }
+}
+h1 {
+    max-width: 24ch;
+    font-size: 4rem;
+    line-height: 3.5rem;
+
+}
+.text-wrapper, header, footer {
+    margin: 0 auto;
+    padding:0 2%;
+    width: 100%;
+
+    @media screen and (min-width: $tab) {
+        padding:0 4%;
+    }
+    @media screen and (min-width: $lap-s) {
+        padding:0 5%;
+    }
+    @media screen and (min-width: $lap-m) {
+        padding:0 6%;
+    }
+    @media screen and (min-width: $lap-l) {
+        padding:0 7%;
+    }
+    @media screen and (min-width: $lap-xl) {
+        padding:0 8%;
+    }
+    @media screen and (min-width: $desk) {
+        padding:0 9%;
+    }
+    
+
+}
+.hero {
+    height: 660px;
+    transition: background-color .3s cubic-bezier(1, 0, 0, 1) 0s;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    &:hover {
+        background-color: rgba(0,0,0,.4);
+    }
+}
+#people {
+    background-image: url("/assets/rosa_m.jpeg");
+}
+

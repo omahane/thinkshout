@@ -1,0 +1,121 @@
+/* Global Variables */
+/* Breakpoints */
+/* Colors */
+.middle-bit {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.primary {
+  color: #636363;
+}
+
+.secondary {
+  color: #f07c00;
+}
+
+* {
+  font-family: "Hind Siliguri", sans-serif;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+header nav {
+  display: flex;
+}
+@media screen and (min-width: 1024px) {
+  header nav {
+    justify-content: space-between;
+    align-items: center;
+  }
+  header nav #logo-wrapper {
+    width: 200px;
+    margin-right: 400px;
+  }
+}
+header nav img {
+  width: 180px;
+}
+header nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+header nav ul.hidden {
+  display: none;
+}
+@media screen and (min-width: 1024px) {
+  header nav ul {
+    display: flex;
+    flex-direction: row;
+  }
+}
+@media screen and (min-width: 1024px) {
+  header nav ul li {
+    margin-left: 3em;
+  }
+}
+header nav ul li:last-of-type {
+  font-weight: 600;
+}
+
+h1 {
+  max-width: 24ch;
+  font-size: 4rem;
+  line-height: 3.5rem;
+}
+
+.text-wrapper, header, footer {
+  margin: 0 auto;
+  padding: 0 2%;
+  width: 100%;
+}
+@media screen and (min-width: 768px) {
+  .text-wrapper, header, footer {
+    padding: 0 4%;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .text-wrapper, header, footer {
+    padding: 0 5%;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .text-wrapper, header, footer {
+    padding: 0 6%;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .text-wrapper, header, footer {
+    padding: 0 7%;
+  }
+}
+@media screen and (min-width: 1680px) {
+  .text-wrapper, header, footer {
+    padding: 0 8%;
+  }
+}
+@media screen and (min-width: 1900px) {
+  .text-wrapper, header, footer {
+    padding: 0 9%;
+  }
+}
+
+.hero {
+  height: 660px;
+  transition: background-color 0.3s cubic-bezier(1, 0, 0, 1) 0s;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.hero:hover {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+#people {
+  background-image: url("/assets/rosa_m.jpeg");
+}
+
+/*# sourceMappingURL=styles.css.map */
