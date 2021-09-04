@@ -1,10 +1,19 @@
 var messageArea = document.querySelector("#form-wrapper p");
 var hamburger = document.querySelector(".hamburger");
+window.onscroll = function() {scrollFunction()};
 
   hamburger.addEventListener("click", function() {
     hamburger.classList.toggle("is-active");
-    document.querySelector("#mobile-menu").classList.toggle("hidden");
+    document.querySelector("#mobile-menu").classList.toggle("expanded");
   });
+
+  function scrollFunction() {
+    if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+      document.getElementById("logo-ts").style.width = "125px";
+    } else {
+        document.getElementById("logo-ts").style.width = "200px";
+    }
+  }
 
 if (!localStorage.getItem("subscribed") == true){
     var subscribe = document.querySelector("#subscribe");
