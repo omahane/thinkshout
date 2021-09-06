@@ -294,9 +294,9 @@ header ul.desktop a {
 }
 header ul.desktop a:hover {
   color: #f07c00;
-  border-top-width: 3px;
+  border-top-width: 5px;
   border-top-style: solid;
-  padding-top: 42px;
+  padding-top: 40px;
 }
 header ul.desktop li {
   display: flex;
