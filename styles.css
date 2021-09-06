@@ -294,12 +294,29 @@ header ul.desktop a {
 }
 header ul.desktop a:hover {
   color: #f07c00;
-  border-top: 3px solid #f07c00;
+  border-top-width: 3px;
+  border-top-style: solid;
   padding-top: 42px;
 }
 header ul.desktop li {
   display: flex;
 }
+header ul.desktop li:nth-child(1n+1) a:hover {
+  border-top-color: #ff8e15;
+}
+header ul.desktop li:nth-child(1n+2) a:hover {
+  border-top-color: #ff9f38;
+}
+header ul.desktop li:nth-child(1n+3) a:hover {
+  border-top-color: #ffb05c;
+}
+header ul.desktop li:nth-child(1n+4) a:hover {
+  border-top-color: #ffc280;
+}
+header ul.desktop li:nth-child(1n+5) a:hover {
+  border-top-color: #ffd3a4;
+}
+
 .hamburger {
   position: absolute;
   right: 1rem;

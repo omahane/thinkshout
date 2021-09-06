@@ -30,6 +30,10 @@ $secondary: #f07c00;
 // Could definitely do this with JS
 // Can this be done with SASS?
 
+@mixin overline-color($alpha) {
+    color: rgba(255, 116, 0, $alpha)
+}
+
 
 :root {
     font-family: 'Hind Siliguri', sans-serif;
@@ -76,16 +80,21 @@ header {
             box-sizing: border-box;
             &:hover {
                 color: $secondary;
-                border-top: 3px solid $secondary;
+                border-top-width: 3px;
+                border-top-style: solid;
                 padding-top: 42px;
 
             }
         }
+        
         li {
             display: flex;
-            
-            a:hover {
-             }
+            @for $i from 1 through 5 {
+                &:nth-child(1n+#{$i}) a:hover {
+                  border-top-color: lighten($secondary, $i * 7%);
+                }
+              }
+           
         }
     }
 }
