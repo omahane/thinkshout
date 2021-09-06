@@ -26,6 +26,10 @@ $secondary: #f07c00;
     width: 90%;
     padding: 0 $padding;
 }
+// TODO: decrease the darkness of border top from first to last
+// Could definitely do this with JS
+// Can this be done with SASS?
+
 
 :root {
     font-family: 'Hind Siliguri', sans-serif;
