@@ -287,7 +287,19 @@ header {
   background: white;
   z-index: 200;
 }
-
+header ul.desktop a {
+  height: 103px;
+  padding-top: 45px;
+  box-sizing: border-box;
+}
+header ul.desktop a:hover {
+  color: #f07c00;
+  border-top: 3px solid #f07c00;
+  padding-top: 42px;
+}
+header ul.desktop li {
+  display: flex;
+}
 .hamburger {
   position: absolute;
   right: 1rem;
@@ -345,7 +357,6 @@ nav ul.desktop {
 @media screen and (min-width: 1024px) {
   nav #logo-wrapper {
     width: 200px;
-    margin-right: 400px;
   }
   nav ul.desktop {
     display: flex;

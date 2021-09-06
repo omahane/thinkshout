@@ -65,7 +65,25 @@ header {
     background: white;
     z-index: 200;
 
-    
+    ul.desktop {
+        a {
+            height: 103px;
+            padding-top: 45px;
+            box-sizing: border-box;
+            &:hover {
+                color: $secondary;
+                border-top: 3px solid $secondary;
+                padding-top: 42px;
+
+            }
+        }
+        li {
+            display: flex;
+            
+            a:hover {
+             }
+        }
+    }
 }
 .hamburger {
     position: absolute;
@@ -77,10 +95,6 @@ header {
 #logo-ts {
     transition: width .5s ease-out;
 }
-// #mobile-menu {
-    
-    // align-items: stretch;
-    // transition: display 2s ease-out;
 
     #mobile-menu {
         background-color: white;
@@ -93,34 +107,27 @@ header {
 		width: 100%;
 		z-index: 10;
 
-
-
         ul {
             list-style: none;
             display: flex;
             flex-direction: column;
             align-items: start;
-
-            
+  
         }
         li {
             margin-left: 0;
             margin-top: .5rem;
-            font-size: 1.5rem;
-            
+            font-size: 1.5rem;     
             
             &:last-of-type {
                 margin-bottom: 1rem;
             }
         }
     }
-
     #mobile-menu.expanded {
         
         height: 250px;
    
-    
-    
     
 }
     nav {
@@ -139,18 +146,13 @@ header {
         @media screen and (min-width: $lap-s) {
             #logo-wrapper {
                 width: 200px;
-                margin-right: 400px;
             }
             ul.desktop {
                 display: flex;
             } 
             ul {
-                display: none;
-                
-                
+                display: none;          
             }
-            
-
         }
 
         img {
