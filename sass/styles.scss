@@ -26,13 +26,6 @@ $secondary: #f07c00;
     width: 90%;
     padding: 0 $padding;
 }
-// TODO: decrease the darkness of border top from first to last
-// Could definitely do this with JS
-// Can this be done with SASS?
-
-@mixin overline-color($alpha) {
-    color: rgba(255, 116, 0, $alpha)
-}
 
 
 :root {
@@ -83,10 +76,8 @@ header {
                 border-top-width: 5px;
                 border-top-style: solid;
                 padding-top: 40px;
-
             }
         }
-        
         li {
             display: flex;
             @for $i from 1 through 5 {
