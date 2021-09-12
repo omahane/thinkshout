@@ -202,9 +202,10 @@ header {
 }
     h1 {
     font-weight: 900;
-    max-width: 24ch;
+    max-width: 60%;
     font-size: 3rem;
     line-height: 3rem;
+    margin-top: 9rem;
  
 
     @media screen and (min-width: $phone) {
