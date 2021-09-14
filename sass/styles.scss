@@ -42,7 +42,7 @@ a {
 
 .middle-bit {
     max-width: 1400px;
-    padding: 0 5%;
+    // padding: 0 5%;
 }
 .primary {
     color: $primary;
@@ -67,8 +67,19 @@ header {
     z-index: 200;
 
     ul.desktop {
+        height: 103px;
+        /* for when we scroll down past 80px */
+        &.fly-on-the-wall {
+            height: unset;
+            a {
+                padding-top: 25px;
+                &:hover {
+                    padding-top: 20px;
+                }
+            }
+        }
+
         a {
-            height: 103px;
             padding-top: 45px;
             box-sizing: border-box;
             &:hover {
@@ -77,6 +88,8 @@ header {
                 border-top-style: solid;
                 padding-top: 40px;
             }
+            
+            
         }
         li {
             display: flex;
@@ -142,7 +155,6 @@ header {
         
         @media screen and (min-width: $phone) {
             justify-content: space-between;
-            align-items: center;
         }
         ul.desktop {
             display: none;
@@ -217,43 +229,43 @@ header {
 
 
 }
-
+    // TODO: Fix padding
     @media screen and (min-width: $tab) {
         .middle-bit {
             width: 90%;
-            padding: 0 5%;
+            padding: 0 auto;
             
         }
     }
     @media screen and (min-width: $lap-s) {
         .middle-bit {
             width: 90%;
-            padding: 0 6%;
+            padding: 0 auto;
         }
     }
     @media screen and (min-width: $lap-m) {
         .middle-bit {
             width: 90%;
-            padding: 0 6%;
+            padding: 0 auto;
         }
     }
     @media screen and (min-width: $lap-l) {
         .middle-bit {
             width: 90%;
-            padding: 0 7%;
+            padding: 0 auto;
         }
     }
     @media screen and (min-width: $lap-xl) {
         .middle-bit {
             width: 90%;
-            padding: 0 8%;
+            padding: 0 auto;
         }
     }
     @media screen and (min-width: $desk) {
         .middle-bit {
             max-width: 1400px;
             width: 90%;
-            padding: 0 9%;
+            padding: 0 auto;
         }
     }
     

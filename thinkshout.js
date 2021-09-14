@@ -9,9 +9,13 @@ window.onscroll = function() {scrollFunction()};
 
   function scrollFunction() {
     if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
-      document.getElementById("logo-ts").style.width = "125px";
+      document.querySelector("#logo-ts").style.width = "125px";
+      document.querySelector("#logo-wrapper img").setAttribute("height","60");
+      document.querySelector("ul.desktop").classList.add("fly-on-the-wall");
     } else {
-        document.getElementById("logo-ts").style.width = "200px";
+        document.querySelector("#logo-ts").style.width = "200px";
+        document.querySelector("ul.desktop").classList.remove("fly-on-the-wall");
+
     }
   }
 

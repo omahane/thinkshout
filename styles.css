@@ -260,7 +260,6 @@ a {
 
 .middle-bit {
   max-width: 1400px;
-  padding: 0 5%;
 }
 
 .primary {
@@ -287,8 +286,20 @@ header {
   background: white;
   z-index: 200;
 }
-header ul.desktop a {
+header ul.desktop {
   height: 103px;
+  /* for when we scroll down past 80px */
+}
+header ul.desktop.fly-on-the-wall {
+  height: unset;
+}
+header ul.desktop.fly-on-the-wall a {
+  padding-top: 25px;
+}
+header ul.desktop.fly-on-the-wall a:hover {
+  padding-top: 20px;
+}
+header ul.desktop a {
   padding-top: 45px;
   box-sizing: border-box;
 }
@@ -365,7 +376,6 @@ nav {
 @media screen and (min-width: 660px) {
   nav {
     justify-content: space-between;
-    align-items: center;
   }
 }
 nav ul.desktop {
@@ -413,9 +423,10 @@ nav ul li:last-of-type {
 
 h1 {
   font-weight: 900;
-  max-width: 24ch;
+  max-width: 60%;
   font-size: 3rem;
   line-height: 3rem;
+  margin-top: 9rem;
 }
 @media screen and (min-width: 660px) {
   h1 {
@@ -428,38 +439,38 @@ h1 {
 @media screen and (min-width: 768px) {
   .middle-bit {
     width: 90%;
-    padding: 0 5%;
+    padding: 0 auto;
   }
 }
 @media screen and (min-width: 1024px) {
   .middle-bit {
     width: 90%;
-    padding: 0 6%;
+    padding: 0 auto;
   }
 }
 @media screen and (min-width: 1280px) {
   .middle-bit {
     width: 90%;
-    padding: 0 6%;
+    padding: 0 auto;
   }
 }
 @media screen and (min-width: 1440px) {
   .middle-bit {
     width: 90%;
-    padding: 0 7%;
+    padding: 0 auto;
   }
 }
 @media screen and (min-width: 1680px) {
   .middle-bit {
     width: 90%;
-    padding: 0 8%;
+    padding: 0 auto;
   }
 }
 @media screen and (min-width: 1900px) {
   .middle-bit {
     max-width: 1400px;
     width: 90%;
-    padding: 0 9%;
+    padding: 0 auto;
   }
 }
 .hero {
