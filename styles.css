@@ -259,7 +259,14 @@ a {
 }
 
 .middle-bit {
-  max-width: 1400px;
+  width: 90%;
+  justify-content: space-around;
+  display: flex;
+}
+
+.centered {
+  display: flex;
+  justify-content: center;
 }
 
 .primary {
@@ -345,7 +352,7 @@ header ul.desktop li:nth-child(1n+5) a:hover {
   margin: -1rem 0;
   overflow: hidden;
   position: absolute;
-  top: 7rem;
+  top: 5rem;
   transition: height 0.6s ease-out;
   width: 100%;
   z-index: 10;
@@ -380,6 +387,10 @@ nav {
 }
 nav ul.desktop {
   display: none;
+}
+nav #logo-wrapper {
+  display: flex;
+  align-items: center;
 }
 @media screen and (min-width: 1024px) {
   nav #logo-wrapper {
