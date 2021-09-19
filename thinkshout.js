@@ -12,6 +12,7 @@ window.onscroll = function() {changeHeader()};
       // document.querySelector("#logo-wrapper").classList.add("fly-on-the-wall");
       // TODO: Remove the magic numbers, use class change and replace them with SCSS changes
       // tried that but it didn't work.
+      // TODO: use this to try it: https://gomakethings.com/how-to-add-transition-animations-to-vanilla-javascript-show-and-hide-methods/
       document.querySelector("#logo-ts").style.width = "125px";
       document.querySelector("#logo-ts").style.paddingTop = "11px";
       // document.querySelector("#logo-wrapper img").setAttribute("height","60");
