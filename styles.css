@@ -346,6 +346,11 @@ header ul.desktop li:nth-child(1n+5) a:hover {
   transition: width 0.5s ease-out;
   height: 39px;
   padding-top: 22px;
+  width: 200px;
+}
+#logo-ts.small-logo {
+  width: 125px;
+  padding-top: 11px;
 }
 
 #mobile-menu {
@@ -355,7 +360,7 @@ header ul.desktop li:nth-child(1n+5) a:hover {
   overflow: hidden;
   position: absolute;
   top: 5rem;
-  transition: height 0.6s ease-out;
+  transition: width 0.6s ease-out;
   width: 100%;
   z-index: 10;
 }

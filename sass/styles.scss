@@ -116,6 +116,11 @@ header {
     transition: width .5s ease-out;
     height: 39px;
     padding-top: 22px;
+    width: 200px;
+    &.small-logo {
+        width: 125px;
+        padding-top: 11px;
+    }
 }
 #mobile-menu {
     background-color: white;
@@ -124,7 +129,7 @@ header {
     overflow: hidden;
     position: absolute;
     top: 5rem;
-    transition: height .6s ease-out;
+    transition: width .6s ease-out;
     width: 100%;
     z-index: 10;
     ul {
