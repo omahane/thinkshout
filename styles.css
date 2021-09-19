@@ -452,38 +452,33 @@ h1 {
 @media screen and (min-width: 768px) {
   .middle-bit {
     width: 90%;
-    padding: 0 auto;
   }
 }
 @media screen and (min-width: 1024px) {
   .middle-bit {
+    max-width: 1200px;
     width: 90%;
-    padding: 0 auto;
+    justify-content: space-between;
   }
 }
 @media screen and (min-width: 1280px) {
   .middle-bit {
     width: 90%;
-    padding: 0 auto;
   }
 }
 @media screen and (min-width: 1440px) {
   .middle-bit {
     width: 90%;
-    padding: 0 auto;
   }
 }
 @media screen and (min-width: 1680px) {
   .middle-bit {
     width: 90%;
-    padding: 0 auto;
   }
 }
 @media screen and (min-width: 1900px) {
   .middle-bit {
-    max-width: 1400px;
     width: 90%;
-    padding: 0 auto;
   }
 }
 .hero {

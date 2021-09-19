@@ -231,39 +231,41 @@ nav {
     @media screen and (min-width: $tab) {
         .middle-bit {
             width: 90%;
-            padding: 0 auto;
+
             
         }
     }
     @media screen and (min-width: $lap-s) {
         .middle-bit {
+            max-width: 1200px;
             width: 90%;
-            padding: 0 auto;
+            justify-content: space-between;
+
+
         }
     }
     @media screen and (min-width: $lap-m) {
         .middle-bit {
             width: 90%;
-            padding: 0 auto;
+
         }
     }
     @media screen and (min-width: $lap-l) {
         .middle-bit {
             width: 90%;
-            padding: 0 auto;
+
         }
     }
     @media screen and (min-width: $lap-xl) {
         .middle-bit {
             width: 90%;
-            padding: 0 auto;
+
         }
     }
     @media screen and (min-width: $desk) {
         .middle-bit {
-            max-width: 1400px;
             width: 90%;
-            padding: 0 auto;
+
         }
     }
     
