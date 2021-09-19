@@ -298,7 +298,7 @@ header ul.desktop {
   /* for when we scroll down past 80px */
 }
 header ul.desktop.fly-on-the-wall {
-  height: unset;
+  height: 60px;
 }
 header ul.desktop.fly-on-the-wall a {
   padding-top: 25px;
@@ -344,6 +344,8 @@ header ul.desktop li:nth-child(1n+5) a:hover {
 
 #logo-ts {
   transition: width 0.5s ease-out;
+  height: 39px;
+  padding-top: 22px;
 }
 
 #mobile-menu {
@@ -380,17 +382,17 @@ nav {
   z-index: 100;
   display: flex;
 }
-@media screen and (min-width: 660px) {
-  nav {
-    justify-content: space-between;
-  }
-}
 nav ul.desktop {
   display: none;
 }
 nav #logo-wrapper {
   display: flex;
   align-items: center;
+}
+@media screen and (min-width: 660px) {
+  nav {
+    justify-content: space-between;
+  }
 }
 @media screen and (min-width: 1024px) {
   nav #logo-wrapper {

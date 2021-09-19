@@ -75,7 +75,7 @@ header {
         height: 103px;
         /* for when we scroll down past 80px */
         &.fly-on-the-wall {
-            height: unset;
+            height: 60px;
             a {
                 padding-top: 25px;
                 &:hover {
@@ -114,6 +114,8 @@ header {
 }
 #logo-ts {
     transition: width .5s ease-out;
+    height: 39px;
+    padding-top: 22px;
 }
 #mobile-menu {
     background-color: white;
@@ -149,9 +151,6 @@ nav {
     z-index: 100;
     display: flex;  
     
-    @media screen and (min-width: $phone) {
-        justify-content: space-between;
-    }
     ul.desktop {
         display: none;
     }
@@ -159,6 +158,9 @@ nav {
         display: flex;
         align-items: center;
     } 
+    @media screen and (min-width: $phone) {
+        justify-content: space-between;
+    }
     @media screen and (min-width: $lap-s) {
         
         #logo-wrapper {
@@ -171,21 +173,16 @@ nav {
             display: none;          
         }
     }
-
     img {
         width: 180px;
     }
-
     ul {
         list-style: none;
         display: flex;
         flex-direction: column;
-        
-
         @media screen and (min-width: $lap-s) {
             display: flex;
             flex-direction: row;
-
         }
 
         li {

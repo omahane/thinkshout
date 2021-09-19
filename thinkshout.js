@@ -1,20 +1,25 @@
 var messageArea = document.querySelector("#form-wrapper p");
 var hamburger = document.querySelector(".hamburger");
-window.onscroll = function() {scrollFunction()};
+window.onscroll = function() {changeHeader()};
 
   hamburger.addEventListener("click", function() {
     hamburger.classList.toggle("is-active");
     document.querySelector("#mobile-menu").classList.toggle("expanded");
   });
 
-  function scrollFunction() {
+  function changeHeader() {
     if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+      // document.querySelector("#logo-wrapper").classList.add("fly-on-the-wall");
+      // TODO: Remove the magic numbers, use class change and replace them with SCSS changes
+      // tried that but it didn't work.
       document.querySelector("#logo-ts").style.width = "125px";
-      document.querySelector("#logo-wrapper img").setAttribute("height","60");
+      document.querySelector("#logo-ts").style.paddingTop = "11px";
+      // document.querySelector("#logo-wrapper img").setAttribute("height","60");
       document.querySelector("ul.desktop").classList.add("fly-on-the-wall");
     } else {
         document.querySelector("#logo-ts").style.width = "200px";
         document.querySelector("ul.desktop").classList.remove("fly-on-the-wall");
+        document.querySelector("#logo-ts").style.paddingTop = "22px";
 
     }
   }
