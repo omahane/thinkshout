@@ -260,7 +260,6 @@ a {
 
 .middle-bit {
   width: 90%;
-  justify-content: space-around;
   display: flex;
 }
 
@@ -292,6 +291,11 @@ header {
   top: 0;
   background: white;
   z-index: 200;
+}
+@media screen and (min-width: 1024px) {
+  header nav {
+    justify-content: space-between;
+  }
 }
 header ul.desktop {
   height: 103px;
@@ -463,7 +467,6 @@ h1 {
   .middle-bit {
     max-width: 1200px;
     width: 90%;
-    justify-content: space-between;
   }
 }
 @media screen and (min-width: 1280px) {
@@ -496,9 +499,10 @@ h1 {
   transition: background-color 0.3s ease-in 0s;
   height: 660px;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   color: white;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 .hero .text-wrapper:hover {
   background-color: rgba(0, 0, 0, 0.5);

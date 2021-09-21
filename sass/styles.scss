@@ -22,10 +22,7 @@ $secondary: #f07c00;
     background-image: url($image-url);
     box-shadow:inset 0 0 0 2000px rgba(0, 0, 0, $alpha);
 }
-@mixin middle-bitter($padding) {
-    width: 90%;
-    padding: 0 $padding;
-}
+
 
 
 :root {
@@ -42,7 +39,6 @@ a {
 
 .middle-bit {
     width: 90%;
-    justify-content: space-around;
     display: flex;
 }
 .centered {
@@ -70,6 +66,12 @@ header {
     top: 0;
     background: white;
     z-index: 200;
+
+    nav {
+        @media screen and (min-width: $lap-s) {
+            justify-content: space-between;
+        }
+    }
 
     ul.desktop {
         height: 103px;
@@ -167,6 +169,7 @@ nav {
         justify-content: space-between;
     }
     @media screen and (min-width: $lap-s) {
+
         
         #logo-wrapper {
             width: 200px;
@@ -243,7 +246,7 @@ nav {
         .middle-bit {
             max-width: 1200px;
             width: 90%;
-            justify-content: space-between;
+            
 
 
         }
@@ -285,9 +288,10 @@ nav {
         // width: 100%;
         height: 660px;
         display: flex;
-        flex-direction: column;
-        justify-content: center;
         color: white;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
 
         &:hover {
             background-color: rgba(0,0,0,.5);
