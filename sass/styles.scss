@@ -111,7 +111,6 @@ header {
 .hamburger {
     position: absolute;
     right: 1rem;
-    top: 2rem;
     z-index: 100;
 }
 #logo-ts {
@@ -134,6 +133,7 @@ header {
     transition: width .6s ease-out;
     width: 100%;
     z-index: 10;
+    flex-direction: column;
     ul {
         list-style: none;
         display: flex;
@@ -151,8 +151,17 @@ header {
         }
     }
 }
-#mobile-menu.expanded {  
-    height: 250px;   
+#top-nav {
+    flex-direction: column;
+
+    @media screen and (min-width: $lap-s) {
+        flex-direction: row;
+        
+    }
+    ul.expanded {  
+        height: 250px;
+        display: flex;   
+        }
 }
 nav {
     z-index: 100;

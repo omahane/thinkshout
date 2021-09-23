@@ -6,7 +6,7 @@ window.onscroll = function() {changeHeader()};
       // to make the hamburger button work better
   hamburger.addEventListener("click", function() {
     hamburger.classList.toggle("is-active");
-    document.querySelector("#mobile-menu").classList.toggle("expanded");
+    document.querySelector("#top-nav ul.desktop").classList.toggle("expanded");
   });
 
   function changeHeader() {
