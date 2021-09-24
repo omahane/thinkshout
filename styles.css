@@ -287,9 +287,10 @@ a {
 }
 
 header {
-  position: sticky;
+  position: fixed;
   top: 0;
   background: white;
+  width: 100%;
   z-index: 200;
 }
 @media screen and (min-width: 1024px) {
@@ -397,7 +398,6 @@ header ul.desktop li:nth-child(1n+5) a:hover {
 }
 
 nav {
-  z-index: 100;
   display: flex;
 }
 nav ul.desktop {
