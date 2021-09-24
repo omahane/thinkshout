@@ -49,11 +49,7 @@ a {
 .secondary {
     color: $secondary;
 }
-@media screen and (min-width: $lap-s) {
-    #hamburger {
-        display: none;
-    }
-}
+
 .container {
     display: flex;
     flex-direction: column;
@@ -86,32 +82,49 @@ header {
             }
         }
         a {
-            padding-top: 45px;
-            box-sizing: border-box;
-            &:hover {
-                color: $secondary;
-                border-top-width: 5px;
-                border-top-style: solid;
-                padding-top: 40px;
+            padding-top: 25px;
+            @media screen and (min-width: $lap-s) {
+                padding-top: 45px;
             }
-            
-            
+            box-sizing: border-box;
+            @media screen and (min-width: $lap-s) {
+                &:hover {
+                    color: $secondary;
+                    border-top-width: 5px;
+                    border-top-style: solid;
+                    
+                        padding-top: 40px; 
+                    }
+            }   
         }
         li {
             display: flex;
+            font-size: 1.25rem;
+            @media screen and (min-width: $lap-s) {
+                font-size: 1rem; 
+            
             @for $i from 1 through 5 {
                 &:nth-child(1n+#{$i}) a:hover {
                   border-top-color: lighten($secondary, $i * 7%);
                 }
               }
+            }
            
         }
     }
 }
-.hamburger {
+
+
+#hamburger {
     position: absolute;
-    right: 1rem;
+    right: 40px;
+    top: 10px;
     z-index: 100;
+    width: 35px;
+    
+    @media screen and (min-width: $lap-s) {
+        display: none;
+    }
 }
 #logo-ts {
     transition: width .5s ease-out;
@@ -153,22 +166,32 @@ header {
 }
 #top-nav {
     flex-direction: column;
+    
 
     @media screen and (min-width: $lap-s) {
         flex-direction: row;
         
     }
+    ul {
+        height: 0;
+        transition: height 600ms ease-in-out;
+        overflow: hidden;
+        @media screen and (min-width: $lap-s) {
+            height: auto;
+            
+        }
+    }
     ul.expanded {  
-        height: 250px;
+        height: 280px;
         display: flex; 
         }
 }
 nav {
     display: flex;  
     
-    ul.desktop {
-        display: none;
-    }
+    // ul.desktop {
+    //     display: none;
+    // }
     #logo-wrapper {
         display: flex;
         align-items: center;
@@ -202,7 +225,7 @@ nav {
         }
 
         li {
-            @media screen and (min-width: $phone) {
+            @media screen and (min-width: $lap-s) {
                 margin-left: 3em;
 
             }

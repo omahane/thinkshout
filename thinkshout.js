@@ -6,8 +6,17 @@ window.onscroll = function() {changeHeader()};
       // to make the hamburger button work better
   hamburger.addEventListener("click", function() {
     hamburger.classList.toggle("is-active");
+    
     document.querySelector("#top-nav ul.desktop").classList.toggle("expanded");
   });
+
+  // Chris Ferdinandi solution follows
+  // Get the natural height of the element
+  var getHeight = function () {
+      elem.style.display = 'block'; // Make it visible TODO: try to make it flex
+      var height = elem.scrollHeight + 'px'; // Get its height
+      elem.style.display = ''; // Hide it again;
+  }
 
   function changeHeader() {
     if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
