@@ -215,16 +215,23 @@ nav {
 }
     h1 {
     font-weight: 900;
-    max-width: 60%;
-    font-size: 3rem;
-    line-height: 3rem;
-    margin-top: 9rem;
- 
+    font-size: 6vw;
+    line-height: 1.25em;
+    margin-top: 20vw;
+    margin-bottom: 10vw;
+    max-width: 80%;
 
-    @media screen and (min-width: $phone) {
+    @media screen and (min-width: $lap-s) {
+        font-size: 5.5vw;
+    }
+    
+
+    @media screen and (min-width: $lap-s) {
+    margin-top: 12rem;
     max-width: 24ch;
     font-size: 4rem;
-    line-height: 4rem;
+    line-height: 5rem;
+    margin-bottom: 4rem;
     
     }
 
