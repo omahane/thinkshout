@@ -17,11 +17,25 @@ $phone: 660px;
 $primary: #636363;
 $secondary: #f07c00;
 
+/* Functions */
+@function calculateRem($size) {
+    $remSize: $size / 16px;
+    @return $remSize * 1rem;
+  }
+
 /* Mixins */
 @mixin hero-photo($image-url, $alpha) {
     background-image: url($image-url);
     box-shadow:inset 0 0 0 2000px rgba(0, 0, 0, $alpha);
 }
+@mixin font-size($size) {
+    font-size: $size;
+    font-size: calculateRem($size);
+  }
+
+
+  
+
 
 :root {
     font-family: 'Hind Siliguri', sans-serif;
@@ -229,7 +243,7 @@ nav {
     @media screen and (min-width: $lap-s) {
     margin-top: 12rem;
     max-width: 24ch;
-    font-size: 4rem;
+    @include font-size(64px);
     line-height: 5rem;
     margin-bottom: 4rem;
     
