@@ -504,14 +504,18 @@ h1 {
   }
 }
 .hero {
-  height: 660px;
+  height: 30vh;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
 }
+@media screen and (min-width: 768px) {
+  .hero {
+    height: 40vw;
+  }
+}
 .hero .text-wrapper {
   transition: background-color 0.3s ease-in 0s;
-  height: 660px;
   display: flex;
   color: white;
   justify-content: center;
@@ -534,14 +538,19 @@ h1 {
   height: 1rem;
   overflow: visible;
 }
+.hero .text-wrapper .middle-bit {
+  flex-wrap: wrap;
+}
 .hero .text-wrapper h2 {
   font-weight: 900;
   font-size: 3.5rem;
   margin: 0 0 0.5rem 0;
+  width: 100%;
 }
 .hero .text-wrapper p {
   margin: 0;
   font-size: 1.5rem;
+  width: 100%;
 }
 
 #people {

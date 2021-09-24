@@ -294,7 +294,11 @@ nav {
     
 
 .hero {
-    height: 660px;
+    height: 30vh;
+    @media screen and (min-width: $tab) {
+        height: 40vw;
+    }
+
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
@@ -302,7 +306,6 @@ nav {
     .text-wrapper {
         transition: background-color .3s ease-in 0s;
         // width: 100%;
-        height: 660px;
         display: flex;
         color: white;
         justify-content: center;
@@ -326,15 +329,23 @@ nav {
             height: 1rem;
             overflow:visible;
         }
+        .middle-bit {
+            flex-wrap: wrap;
+
+        }
+        
 
         h2 {
+            
             font-weight: 900;
             font-size: 3.5rem;
             margin: 0 0 .5rem 0;
+            width: 100%
         }
         p {
             margin: 0;
             font-size: 1.5rem;
+            width: 100%;
         }
     }
     
