@@ -568,7 +568,13 @@ h1 {
   box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.5);
 }
 
+#services .services-wrapper {
+  display: grid;
+  justify-content: stretch;
+  grid-template-areas: "heading heading heading" "card1   card2   card3";
+}
 #services h2 {
+  grid-area: heading;
   font-weight: 900;
   font-size: 1.75em;
   margin-bottom: 1.5rem;
@@ -588,6 +594,15 @@ h1 {
 .card-group .card {
   display: flex;
   max-width: 400px;
+}
+.card-group .card:nth-of-type(1) {
+  grid-area: card1;
+}
+.card-group .card:nth-of-type(2) {
+  grid-area: card2;
+}
+.card-group .card:nth-of-type(3) {
+  grid-area: card3;
 }
 .card-group .card h3 {
   font-weight: 900;

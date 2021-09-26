@@ -361,11 +361,22 @@ nav {
 }
 
 #services {
+    .services-wrapper {
+        display: grid;
+        justify-content: stretch;
+        grid-template-areas: 
+        "heading heading heading"
+        "card1   card2   card3";
+        
+
+    }
     h2 {
+        grid-area: heading;
         font-weight: 900;
         font-size: 1.75em;
         margin-bottom: 1.5rem;
     }
+
 }
 .card-group {
     display: flex;
@@ -378,6 +389,11 @@ nav {
 
 
     .card {
+        @for $i from 1 through 3 {
+            &:nth-of-type(#{$i}) {
+              grid-area: card+$i;
+            }
+          }
         display: flex;
         max-width: 400px;
 
