@@ -647,12 +647,13 @@ h1 {
 }
 
 footer {
+  align-items: center;
   background-image: url("assets/falcon-view.jpeg");
-  box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.7);
   background-repeat: no-repeat;
   background-size: cover;
-  position: relative;
   color: white;
+  box-shadow: inset 0 0 0 2000px rgba(55, 53, 53, 0.79);
+  position: relative;
 }
 footer .section-wrapper {
   display: flex;
@@ -671,7 +672,6 @@ footer .section-wrapper li {
   }
 }
 footer #form-wrapper {
-  padding-top: 2rem;
   order: 1;
 }
 footer #form-wrapper p {
@@ -679,6 +679,11 @@ footer #form-wrapper p {
 }
 footer nav {
   order: 2;
+}
+@media screen and (min-width: 660px) {
+  footer nav ul {
+    flex-direction: row;
+  }
 }
 footer #b-corp-wrapper {
   order: 3;
@@ -691,7 +696,6 @@ footer #footer-bottom-wrapper {
     height: 550px;
   }
   footer .section-wrapper {
-    padding-top: 80px;
     display: grid;
     grid-template: "form-wrapper    b-corp" 160px "footer-nav      footer-nav" 2em "foot          foot" 200px/1fr 60px;
   }
