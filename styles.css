@@ -283,9 +283,10 @@ a {
 }
 
 header {
+  background: white;
+  padding-bottom: 1rem;
   position: fixed;
   top: 0;
-  background: white;
   width: 100%;
   z-index: 200;
 }
@@ -298,13 +299,13 @@ header ul.desktop {
   height: 103px;
   /* for when we scroll down past 80px */
 }
-header ul.desktop.fly-on-the-wall {
+header ul.desktop.scrolled {
   height: 60px;
 }
-header ul.desktop.fly-on-the-wall a {
+header ul.desktop.scrolled a {
   padding-top: 25px;
 }
-header ul.desktop.fly-on-the-wall a:hover {
+header ul.desktop.scrolled a:hover {
   padding-top: 20px;
 }
 header ul.desktop a {

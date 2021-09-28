@@ -65,9 +65,10 @@ a {
   flex-direction: column;
 }
 header {
+  background: white;
+  padding-bottom: 1rem;
   position: fixed;
   top: 0;
-  background: white;
   width: 100%;
   z-index: 200;
 
@@ -80,7 +81,7 @@ header {
   ul.desktop {
     height: 103px;
     /* for when we scroll down past 80px */
-    &.fly-on-the-wall {
+    &.scrolled {
       height: 60px;
       a {
         padding-top: 25px;
@@ -420,27 +421,24 @@ footer {
     flex-direction: column;
     align-items: center;
     nav {
-        order: 2;
-        ul {
-            align-items: center;
-            margin: 2rem 0;
+      order: 2;
+      ul {
+        align-items: center;
+        margin: 2rem 0;
+        @media screen and (min-width: $phone) {
+          flex-direction: row;
+        }
+        li {
+          margin-top: 1rem;
+          font-size: 1.5rem;
+          margin-left: 0;
           @media screen and (min-width: $phone) {
-            flex-direction: row;
+            font-size: 1rem;
+            margin-right: 1rem;
           }
-          li {
-            margin-top: 1rem;
-            font-size: 1.5rem;
-            margin-left: 0;
-            @media screen and (min-width: $phone) {
-              font-size: 1rem;
-              margin-right: 1rem;
-
-            }
-
-          }
-          
         }
       }
+    }
   }
 
   #form-wrapper {
@@ -449,14 +447,13 @@ footer {
       margin-bottom: 0.5rem;
     }
   }
-  
+
   #b-corp-wrapper {
     order: 3;
     img {
-        height: auto;
-        width: 64px;
+      height: auto;
+      width: 64px;
     }
-    
   }
   #footer-bottom-wrapper {
     order: 4;
@@ -519,7 +516,6 @@ footer {
       letter-spacing: 0.1rem;
     }
   }
-  
 
   #footer-bottom-wrapper {
     display: flex;
