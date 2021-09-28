@@ -297,7 +297,6 @@ header {
 }
 header ul.desktop {
   height: 103px;
-  /* for when we scroll down past 80px */
 }
 header ul.desktop.scrolled {
   height: 60px;
