@@ -33,6 +33,12 @@ $secondary: #f07c00;
   font-size: calculateRem($size);
 }
 
+/* Utitlities */
+.full-bleed {
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+  }
+
 :root {
   font-family: "Hind Siliguri", sans-serif;
 }
@@ -45,14 +51,14 @@ a {
   display: none;
 }
 
-.middle-bit {
-  width: 90%;
-  display: flex;
-}
-.centered {
-  display: flex;
-  justify-content: center;
-}
+// .middle-bit {
+//   width: 90%;
+//   display: flex;
+// }
+// .centered {
+//   display: flex;
+//   justify-content: center;
+// }
 .primary {
   color: $primary;
 }
@@ -61,8 +67,9 @@ a {
 }
 
 .container {
-  display: flex;
-  flex-direction: column;
+    margin-inline: auto;
+    padding-inline: 1rem;
+    max-width: 88rem;
 }
 header {
   background: white;
