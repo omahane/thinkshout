@@ -253,6 +253,13 @@ footer form button:hover, footer form button:active, footer form button:focus {
   margin-left: calc(50% - 50vw);
 }
 
+.wrapper {
+  max-width: 88rem;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
 :root {
   font-family: "Hind Siliguri", sans-serif;
 }
@@ -500,32 +507,33 @@ h1 {
     width: 90%;
   }
 }
-.hero {
+a.hero {
+  display: flex;
   height: 30vh;
+  color: white;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
 }
 @media screen and (min-width: 768px) {
-  .hero {
+  a.hero {
     height: 40vw;
   }
 }
-.hero .text-wrapper {
+a.hero.text-wrapper {
   transition: background-color 0.3s ease-in 0s;
   display: flex;
-  color: white;
   justify-content: center;
   align-items: center;
   width: 100%;
 }
-.hero .text-wrapper:hover {
-  background-color: rgba(0, 0, 0, 0.5);
+a.hero.text-wrapper:hover {
+  background-color: black;
 }
-.hero .text-wrapper:hover p {
+a.hero.text-wrapper:hover p {
   transition: background-image 0.3s ease-in 0s;
 }
-.hero .text-wrapper:hover p::after {
+a.hero.text-wrapper:hover p::after {
   content: "";
   display: inline-block;
   background-image: url("assets/si-sprite.svg");
@@ -535,16 +543,16 @@ h1 {
   height: 1rem;
   overflow: visible;
 }
-.hero .text-wrapper .middle-bit {
+a.hero.text-wrapper .middle-bit {
   flex-wrap: wrap;
 }
-.hero .text-wrapper h2 {
+a.hero.text-wrapper h2 {
   font-weight: 900;
   font-size: 3.5rem;
   margin: 0 0 0.5rem 0;
   width: 100%;
 }
-.hero .text-wrapper p {
+a.hero.text-wrapper p {
   margin: 0;
   font-size: 1.5rem;
   width: 100%;
@@ -552,6 +560,10 @@ h1 {
 
 #people {
   background-image: url("assets/rosa_m.jpeg");
+  box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.5);
+}
+#people:hover {
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("assets/rosa_m.jpeg");
   box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.5);
 }
 
